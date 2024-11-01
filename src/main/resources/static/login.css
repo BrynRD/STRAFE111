@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+
+:root{
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    --pink: #f0d6b1;
+}
+body{
+    font-family: var(--sm-font);
+}
+
+/* button */
+.bg-primary{
+    background-color: var(--pink)!important;
+}
+
+.btn:not(.nav-btns button){
+    background-color: #1b1b1b;
+    color: rgb(255, 255, 255);
+    padding: 10px 28px;
+    border-radius: 25px;
+    border: 1px solid rgb(85, 85, 85);
+}
+.btn:not(.nav-btns button):hover{
+    background-color: var(--pink);
+    color: #fff;
+    border-color: var(--pink);
+}
+
+
+.text-primary{
+    color: var(--pink)!important;
+}
+
+
+.navbar{
+    -webkit-box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand img{
+    width: 30px;
+}
+.navbar-brand span{
+    letter-spacing: 2px;
+    font-family: var(--lg-font);
+}
+.nav-link:hover{
+    color: var(--pink)!important;
+}
+.nav-item{
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.05);
+}
+
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 50px;
+}
+
+.login-form {
+    background-color: #ffffff;
+    border: 1px solid #ffe9ad;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+
+h2 {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-label {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #fff9c6;
+    padding: 10px;
+    font-size: 0.95rem;
+}
+
+.form-control:focus {
+    border-color: #ffe7a1;
+    box-shadow: 0 0 5px rgba(255, 236, 180, 0.5);
+}
+
+.btn-primary {
+    background-color: #ffeec4;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #151515; /* Un tono más claro al pasar el cursor */
+}
+
+a {
+    color: #0000009c; /* Color beige cálido para los enlaces */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.text-center {
+    color: #333;
+}

@@ -1,0 +1,38 @@
+Index: src/main/java/com/strafe/controller/AdminController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/strafe/controller/AdminController.java b/src/main/java/com/strafe/controller/AdminController.java
+--- a/src/main/java/com/strafe/controller/AdminController.java	
++++ b/src/main/java/com/strafe/controller/AdminController.java	(date 1730503331717)
+@@ -16,7 +16,6 @@
+ import java.nio.file.Path;
+ import java.nio.file.Paths;
+ import java.nio.file.StandardCopyOption;
+-import java.util.UUID;
+ 
+ @Controller
+ @RequestMapping("/admin")
+@@ -174,13 +173,19 @@
+         if (!Files.exists(directorioImagenes)) {
+             Files.createDirectories(directorioImagenes);
+         }
++
++        // Obtener el nombre original de la imagen
+         String nombreArchivoOriginal = imagen.getOriginalFilename();
+         if (nombreArchivoOriginal == null) {
+             throw new IOException("El archivo no tiene un nombre válido.");
+         }
+-        String nombreArchivo = UUID.randomUUID().toString() + "_" + nombreArchivoOriginal;
++
++        // Usa el nombre original del archivo
++        String nombreArchivo = nombreArchivoOriginal;
++
+         Path rutaArchivo = directorioImagenes.resolve(nombreArchivo);
+         Files.copy(imagen.getInputStream(), rutaArchivo, StandardCopyOption.REPLACE_EXISTING);
+-        return nombreArchivo;
++
++        return nombreArchivo; // Retorna solo el nombre original
+     }
+ }

@@ -1,0 +1,34 @@
+Index: src/main/resources/templates/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/index.html b/src/main/resources/templates/index.html
+--- a/src/main/resources/templates/index.html	
++++ b/src/main/resources/templates/index.html	(date 1729822829696)
+@@ -229,7 +229,7 @@
+                             </a>
+                             <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">Nuevo</span>
+                         </div>
+-                        
++
+                             <p class = "text-capitalize my-1">Strafe Line Short</p>
+                             <span class = "fw-bold">S/90.00</span>
+                         </div>
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1729824818712)
++++ b/.idea/vcs.xml	(date 1729824818712)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file

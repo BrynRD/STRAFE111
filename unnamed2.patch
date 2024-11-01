@@ -1,0 +1,17 @@
+Index: src/main/java/com/strafe/controller/AdminController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/strafe/controller/AdminController.java b/src/main/java/com/strafe/controller/AdminController.java
+--- a/src/main/java/com/strafe/controller/AdminController.java	
++++ b/src/main/java/com/strafe/controller/AdminController.java	(date 1730326775912)
+@@ -97,7 +97,7 @@
+     }
+ 
+     @PostMapping("/productos/actualizar/{id}")
+-    public String updateProducto(@PathVariable Long id, @ModelAttribute Producto producto, @RequestParam("imagen") MultipartFile imagen, Model model) {
++    public String updateProducto(@PathVariable Long id, @ModelAttribute Producto producto, @RequestParam("imagenPrincipalFile") MultipartFile imagen, Model model) {
+         producto.setId(id);
+         Producto productoExistente = productoService.findById(id).orElseThrow(() -> new RuntimeException("Producto no encontrado con id " + id));
+ 

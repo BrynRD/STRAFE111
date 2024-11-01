@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${#strings.equals(producto.id, null) ? 'Agregar Producto' : 'Editar Producto'}">Productos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .current-image {
+            max-width: 100%;
+            height: auto;
+        }
+        .additional-image {
+            max-width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+        .placeholder {
+            border: 1px dashed #ccc;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5 pt-5">
+    <h1 class="mb-4 text-center" th:text="${#strings.equals(producto.id, null) ? 'Agregar Producto' : 'Editar Producto'}"></h1>
+    <div th:if="${errorMessage}" class="alert alert-danger" role="alert">
+        <p th:text="${errorMessage}">Error al guardar el producto.</p>
+    </div>
+    <form th:action="@{${producto.id == null ? '/admin/productos/guardar' : '/admin/productos/actualizar/' + producto.id}}"
+          th:object="${producto}" method="post" enctype="multipart/form-data">
+
+        <!-- Nombre del Producto -->
+        <div class="mb-3">
+            <label class="form-label">Nombre:</label>
+            <input type="text" th:field="*{nombre}" class="form-control" required />
+        </div>
+
+        <!-- Descripción del Producto -->
+        <div class="mb-3">
+            <label class="form-label">Descripción:</label>
+            <textarea th:field="*{descripcion}" class="form-control" rows="3" required></textarea>
+        </div>
+
+        <!-- Precio del Producto -->
+        <div class="mb-3">
+            <label class="form-label">Precio:</label>
+            <input type="number" th:field="*{precio}" step="0.01" class="form-control" required />
+        </div>
+
+        <!-- Categoría del Producto -->
+        <div class="mb-3">
+            <label class="form-label">Categoría:</label>
+            <select th:field="*{categoria.categoriaid}" class="form-select" required>
+                <option value="" disabled th:if="${producto.categoria == null}">Selecciona una categoría</option>
+                <option th:each="categoria : ${categorias}"
+                        th:value="${categoria.categoriaid}"
+                        th:text="${categoria.nombre}"
+                        th:selected="${categoria.categoriaid == producto.categoria.categoriaid}"></option>
+            </select>
+        </div>
+
+        <!-- Mostrar imagen existente al editar -->
+        <div class="mb-3" th:if="${producto.imagenP != null}">
+            <label class="form-label">Imagen Actual:</label><br/>
+            <img th:src="@{${producto.imagenP}}" alt="Imagen Principal" class="current-image img-fluid"/>
+        </div>
+
+        <!-- Subir nueva imagen principal -->
+        <div class="mb-3">
+            <label class="form-label" th:text="${producto.id == null ? 'Imagen Principal:' : 'Cambiar Imagen Principal:'}">Imagen Principal:</label>
+            <input type="file" name="imagenPrincipalFile" class="form-control" th:required="${producto.id == null ? 'true' : 'false'}" accept="image/*" />
+            <small class="form-text text-muted" th:text="${producto.id == null ? 'Sube una imagen principal para el producto.' : 'Si deseas cambiar la imagen principal, selecciona una nueva.'}"></small>
+        </div>
+
+        <!-- Mostrar imagen frontal -->
+        <div class="mb-3" th:if="${producto.imagenF != null}">
+            <label class="form-label">Imagen Frontal:</label><br/>
+            <img th:src="@{${producto.imagenF}}" alt="Imagen Frontal" class="additional-image"/>
+        </div>
+
+        <!-- Subir nueva imagen frontal -->
+        <div class="mb-3">
+            <label class="form-label">Cambiar Imagen Frontal:</label>
+            <input type="file" name="imagenFFile" class="form-control" accept="image/*" />
+            <small class="form-text text-muted">Selecciona una nueva imagen frontal (opcional).</small>
+        </div>
+
+        <!-- Mostrar imagen lateral -->
+        <div class="mb-3" th:if="${producto.imagenL != null}">
+            <label class="form-label">Imagen Lateral:</label><br/>
+            <img th:src="@{${producto.imagenL}}" alt="Imagen Lateral" class="additional-image"/>
+        </div>
+
+        <!-- Subir nueva imagen lateral -->
+        <div class="mb-3">
+            <label class="form-label">Cambiar Imagen Lateral:</label>
+            <input type="file" name="imagenLFile" class="form-control" accept="image/*" />
+            <small class="form-text text-muted">Selecciona una nueva imagen lateral (opcional).</small>
+        </div>
+
+        <!-- Stock por Tallas -->
+        <div class="mb-3">
+            <label class="form-label">Stock por Tallas:</label>
+            <div class="form-group">
+                <label for="stockS">Talla S:</label>
+                <input type="number" class="form-control" id="stockS" th:field="*{stockS}" min="0" required th:value="${producto.stockS}"/>
+            </div>
+            <div class="form-group">
+                <label for="stockM">Talla M:</label>
+                <input type="number" class="form-control" id="stockM" th:field="*{stockM}" min="0" required th:value="${producto.stockM}"/>
+            </div>
+            <div class="form-group">
+                <label for="stockL">Talla L:</label>
+                <input type="number" class="form-control" id="stockL" th:field="*{stockL}" min="0" required th:value="${producto.stockL}"/>
+            </div>
+            <div class="form-group">
+                <label for="stockXL">Talla XL:</label>
+                <input type="number" class="form-control" id="stockXL" th:field="*{stockXL}" min="0" required th:value="${producto.stockXL}"/>
+            </div>
+        </div>
+
+        <!-- Botones de acción -->
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="/admin/productos" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

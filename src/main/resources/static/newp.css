@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
+
+:root {
+    --lg-font: 'Kaisei Tokumin', serif;
+    --sm-font: 'Poppins', sans-serif;
+    --pink: #f0d6b1;
+}
+
+body {
+    font-family: var(--sm-font);
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo del contenedor */
+.container {
+    margin-top: 60px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 3px 9px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h1 {
+    font-family: var(--lg-font);
+    color: rgb(85, 85, 85);
+    margin-bottom: 20px;
+}
+
+/* Estilo del formulario */
+form {
+    font-family: var(--sm-font);
+}
+
+/* Estilo de etiquetas y entradas del formulario */
+.form-label {
+    font-weight: 500;
+    color: rgb(85, 85, 85);
+    margin-bottom: 10px;
+}
+
+.form-control {
+    font-family: var(--sm-font);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.form-control:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 5px rgba(240, 214, 177, 0.5);
+}
+
+/* Botón de envío */
+button.btn-primary {
+    background-color: #fff;
+    color: rgb(85, 85, 85);
+    padding: 10px 28px;
+    border-radius: 25px;
+    border: 1px solid rgb(85, 85, 85);
+    font-family: var(--sm-font);
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+    background-color: var(--pink);
+    color: #fff;
+    border-color: var(--pink);
+}
+
+/* Estilo para entradas específicas */
+input[type="text"],
+input[type="number"],
+textarea {
+    margin-bottom: 15px;
+}

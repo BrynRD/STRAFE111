@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STRAFE</title>
+    <!-- icon carrito, buscar, favorito.-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+    <link rel = "stylesheet" href = "/style.css">
+</head>
+<body>
+
+
+
+<nav class = "navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+    <div class = "container">
+        <a class = "navbar-brand d-flex justify-content-between align-items-center order-lg-0" href = "/">
+            <span class = "text-uppercase fw-lighter ms-2">Strafe</span>
+        </a>
+
+        <div class = "order-lg-2 nav-btns">
+            <button type = "button" class = "btn position-relative">
+                <i class = "fa fa-shopping-cart"></i>
+                <span class = "position-absolute top-0 start-100 translate-middle badge bg-primary">5</span>
+            </button>
+            <button type="button" class="btn position-relative" onclick="window.location.href='/login'">
+                <i class="fa fa-user"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge bg-primary"></span>
+            </button>
+
+            <button type = "button" class = "btn position-relative">
+                <i class = "fa fa-search"></i>
+            </button>
+        </div>
+
+        <button class = "navbar-toggler border-0" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navMenu">
+            <span class = "navbar-toggler-icon"></span>
+        </button>
+
+        <div class = "collapse navbar-collapse order-lg-1" id = "navMenu">
+            <ul class = "navbar-nav mx-auto text-center">
+                <li class = "nav-item px-2 py-2">
+                    <a class = "nav-link text-uppercase text-dark" href = "#inicio">INICIO</a>
+                </li>
+                <li class = "nav-item px-2 py-2">
+                    <a class = "nav-link text-uppercase text-dark" href = "#coleccion">END OF DECLINE</a>
+                </li>
+                <li class = "nav-item px-2 py-2">
+                    <a class = "nav-link text-uppercase text-dark" href = "/productos">PRODUCTOS</a>
+                </li>
+                <li class = "nav-item px-2 py-2">
+                    <a class = "nav-link text-uppercase text-dark" href = "#blog">BLOG</a>
+                </li>
+                <li class = "nav-item px-2 py-2">
+                    <a class = "nav-link text-uppercase text-dark" href = "#contacto">CONTACTO</a>
+                </li>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+<header id = "header" class = "vh-100 carousel slide" data-bs-ride = "carousel" style = "padding-top: 104px;">
+    <div class = "container h-100 d-flex align-items-center carousel-inner">
+        <div class = "text-center carousel-item active">
+            <h2 class = "text-capitalize text-black">Nueva Colección Invierno</h2>
+            <h1 class = "text-uppercase py-2 fw-bold text-black">END OF DECLINE</h1>
+            <a href = "#" class = "btn mt-3 text-uppercase">COMPRAR</a>
+        </div>
+        <div class = "text-center carousel-item">
+            <h2 class = "text-capitalize text-black">Nueva Colección Invierno</h2>
+            <h1 class = "text-uppercase py-2 fw-bold text-black">END OF DECLINE</h1>
+            <a href = "#" class = "btn mt-3 text-uppercase ">COMPRAR</a>
+        </div>
+    </div>
+
+    <button class = "carousel-control-prev" type = "button" data-bs-target="#header" data-bs-slide = "prev">
+        <span class = "carousel-control-prev-icon"></span>
+    </button>
+    <button class = "carousel-control-next" type = "button" data-bs-target="#header" data-bs-slide = "next">
+        <span class = "carousel-control-next-icon"></span>
+    </button>
+</header>
+
+
+<!-- ultima coleccion-->
+<section id = "collection" class = "py-5">
+    <div class = "container">
+        <div class = "title text-center">
+            <h2 class = "position-relative d-inline-block">END OF DECLINE</h2>
+        </div>
+
+        <div class = "row g-0">
+            <div class = "d-flex flex-wrap justify-content-center mt-5 filter-button-group">
+                <button type = "button" class = "btn m-2 text-dark active-filter-btn" data-filter = "*">Nueva Colección</button>
+                <button type = "button" class = "btn m-2 text-dark" data-filter = ".feat">Todo</button>
+
+            </div>
+            <div class="collection-list mt-4 row gx-0 gy-3">
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2 best">
+                    <div class="collection-img position-relative">
+
+                        <a href="/detalles-producto.html" class="d-block position-relative">
+
+                            <img src="/images/puffer.png" class="w-100 main-img" alt="Puffer Jacket">
+
+                            <img src="/images/puffer1.1.webp" class="w-100 hover-img" alt="Puffer Jacket Hover">
+                        </a>
+
+                        <span class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center" style="top: 10px; left: 10px;">Nuevo</span>
+                    </div>
+
+                    <div class="text-center">
+
+                        <p class="text-capitalize my-1">Puffer Jacket</p>
+                        <span class="fw-bold">S/210.00</span>
+                    </div>
+                </div>
+
+
+                <div class = "collection-list col-md-6 col-lg-4 col-xl-3 p-2 best">
+                    <div class = "collection-img position-relative">
+                        <a href="/detalles-producto">
+                            <img src = "/images/c_pant_girl.png" class = "w-100">
+                            <img src="/images/cruz1.1.webp" class="w-100 hover-img" alt="Producto 2 Hover">
+
+                        </a>
+                        <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">Nuevo</span>
+                    </div>
+                    <div class = "text-center">
+
+                        <p class = "text-capitalize my-1">Crosses Hoddie</p>
+                        <span class = "fw-bold">S/.170.00</span>
+                    </div>
+                </div>
+
+                <div class = "col-md-6 col-lg-4 col-xl-3 p-2 new">
+                    <div class = "collection-img position-relative">
+                        <a href="/detalles-producto">
+                            <img src = "/images/c_polo-shirt.png" class = "w-100">
+                            <img src="/images/usa.webp" class="w-100 hover-img" alt="Producto 3 Hover">
+                        </a>
+                        <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">Nuevo</span>
+                    </div>
+                    <div class = "text-center">
+
+                        <p class = "text-capitalize my-1">U.S.A Zip-Up</p>
+                        <span class = "fw-bold">S/.190.00</span>
+                    </div>
+                </div>
+
+                <div class = "col-md-6 col-lg-4 col-xl-3 p-2 best">
+                    <div class = "collection-img position-relative">
+                        <a href="/detalles-producto">
+                            <img src = "/images/revamp1.1.webp" class = "w-100">
+                            <img src="/images/c_shirt-girl.png" class="w-100 hover-img" alt="Producto 4 Hover">
+                        </a>
+
+                        <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">Nuevo</span>
+                    </div>
+                    <div class = "text-center">
+
+                        <p class = "text-capitalize my-1">Revamp Zip-Up</p>
+                        <span class = "fw-bold">S/.185.00</span>
+                    </div>
+                </div>
+
+                <div class = "col-md-6 col-lg-4 col-xl-3 p-2 feat">
+                    <div class = "collection-img position-relative">
+                        <a href="/detalles-producto">
+                            <img src = "/images/2002B1.webp" class = "w-100">
+                            <img src="/images/2002B1.1.webp" class="w-100 hover-img" alt="Producto 5 Hover">
+                        </a>
+                        <span class = "position-absolute bg-primary text-white ">Nuevo</span>
+                    </div>
+                    <div class = "text-center">
+
+                        <p class = "text-capitalize my-1">2002R Black Jeans </p>
+                        <span class = "fw-bold">S/.180.00</span>
+                    </div>
+                </div>
+
+                <div class = "col-md-6 col-lg-4 col-xl-3 p-2 new">
+                    <div class = "collection-img position-relative">
+
+                        <a href="/detalles-producto">
+                            <img src = "/images/2002BL1.webp" class = "w-100 main-img">
+                            <img src="/images/2022BL1.1.webp" class="w-100 hover-img" alt="Producto 6 Hover">
+                        </a>
+                        <span class = "position-absolute bg-primary text-white ">Nuevo</span>
+                    </div>
+                    <div class = "text-center">
+
+                        <p class = "text-capitalize my-1">2002R Jeans DarkBlue</p>
+                        <span class = "fw-bold">S/.180.00</span>
+                    </div>
+                </div>
+
+                <div class = "col-md-6 col-lg-4 col-xl-3 p-2 best">
+                    <div class = "collection-img position-relative">
+
+                        <a href="/detalles-producto">
+                            <img src = "/images/brasil1.webp" class = "w-100">
+                            <img src="/images/brasil1.1.webp" class="w-100 hover-img" alt="Producto 7 Hover">
+                        </a>
+
+                        <span class = "position-absolute bg-primary text-white">Nuevo</span>
+                    </div>
+                    <div class = "text-center">
+
+                        <p class = "text-capitalize my-1">Brasil Track Pant</p>
+                        <span class = "fw-bold">S/.95.00</span>
+                    </div>
+                </div>
+
+                <div class = "col-md-6 col-lg-4 col-xl-3 p-2 feat">
+                    <div class = "collection-img position-relative">
+                        <div class = "collection-img position-relative">
+                            <a href="/detalles-producto">
+                                <img src = "/images/shorts1.webp" class = "w-100">
+                                <img src="/images/shorS1.1.webp" class="w-100 hover-img" alt="Producto 8 Hover">
+                            </a>
+                            <span class = "position-absolute bg-primary text-white d-flex align-items-center justify-content-center">Nuevo</span>
+                        </div>
+
+                            <p class = "text-capitalize my-1">Strafe Line Short</p>
+                            <span class = "fw-bold">S/90.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<!-- favoritos -->
+<section id = "special" class = "py-5">
+    <div class = "container">
+        <div class = "title text-center py-5">
+            <h2 class = "position-relative d-inline-block">PRODUCTOS</h2>
+        </div>
+
+        <div class = "special-list row g-0">
+            <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+                <div class = "special-img position-relative overflow-hidden">
+                    <img src = "/images/special_product_1.jpg" class = "w-100">
+                    <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                            <i class = "fas fa-heart"></i>
+                        </span>
+                </div>
+                <div class = "text-center">
+                    <p class = "text-capitalize mt-3 mb-1">Revolution T-Shirt</p>
+                    <span class = "fw-bold d-block">S/85.00</span>
+                    <a href = "#" class = "btn btn-primary mt-3">Añadir al Carrito</a>
+                </div>
+            </div>
+
+            <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+                <div class = "special-img position-relative overflow-hidden">
+                    <img src = "/images/special_product_2.jpg" class = "w-100">
+                    <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                            <i class = "fas fa-heart"></i>
+                        </span>
+                </div>
+                <div class = "text-center">
+                    <p class = "text-capitalize mt-3 mb-1">Eternal Pant</p>
+                    <span class = "fw-bold d-block">S/.180.00</span>
+                    <a href = "#" class = "btn btn-primary mt-3">Añadir al Carrito</a>
+                </div>
+            </div>
+
+            <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+                <div class = "special-img position-relative overflow-hidden">
+                    <img src = "/images/special_product_3.jpg" class = "w-100">
+                    <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                            <i class = "fas fa-heart"></i>
+                        </span>
+                </div>
+                <div class = "text-center">
+                    <p class = "text-capitalize mt-3 mb-1">Revolution Pant</p>
+                    <span class = "fw-bold d-block">S/.160.00</span>
+                    <a href = "#" class = "btn btn-primary mt-3">Añadir al Carrito</a>
+                </div>
+            </div>
+
+            <div class = "col-md-6 col-lg-4 col-xl-3 p-2">
+                <div class = "special-img position-relative overflow-hidden">
+                    <img src = "/images/special_product_4.jpg" class = "w-100">
+                    <span class = "position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                            <i class = "fas fa-heart"></i>
+                        </span>
+                </div>
+                <div class = "text-center">
+                    <p class = "text-capitalize mt-3 mb-1">Washed Hoddie</p>
+                    <span class = "fw-bold d-block">S/.160.00</span>
+                    <a href = "#" class = "btn btn-primary mt-3">Añadir al Carrito</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id = "offers" class = "py-5">
+    <div class = "container">
+        <div class = "row d-flex align-items-center justify-content-center text-center justify-content-lg-start text-lg-start">
+            <div class = "offers-content">
+                <span class = "text-black">DESCUENTOS</span>
+                <h2 class = "mt-2 mb-4 text-black">Hasta 8/09/24</h2>
+                <a href = "#" class = "btn text-black">Comprar </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- crear cuenta footer -->
+<section id = "newsletter" class = "py-5">
+    <div class = "container">
+        <div class = "d-flex flex-column align-items-center justify-content-center">
+            <div class = "title text-center pt-3 pb-5">
+                <h2 class = "position-relative d-inline-block ms-4">Crea Una Cuenta!</h2>
+            </div>
+
+            <p class = "text-center text-muted">Únete a Strafe y se el primero en enterarte de nuestras ultimas coleciones</p>
+            <div class = "input-group mb-3 mt-3">
+                <input type = "text" class = "form-control" placeholder="Ingresa tu correo ...">
+                <a href="/register" class="btn btn-primary">Registrarme</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class = "bg-crema py-5">
+    <div class = "container">
+        <div class = "row text-black g-4">
+            <div class = "col-md-6 col-lg-3">
+                <a class = "text-uppercase text-decoration-none brand text-black" href = "/index.html">STRAFE</a>
+                <p class = "text-black text-muted mt-3">La mejor tienda de ropa en Perú.</p>
+            </div>
+
+            <div class = "col-md-6 col-lg-3">
+
+                <ul class = "list-unstyled">
+                    <li class = "my-3">
+                        <a href = "#" class = "text-black text-decoration-none text-muted">
+                            <i class = "fas fa-chevron-right me-1"></i> Inicio
+                        </a>
+                    </li>
+                    <li class = "my-3">
+                        <a href = "#" class = "text-black text-decoration-none text-muted">
+                            <i class = "fas fa-chevron-right me-1"></i> End Of Decline
+                        </a>
+                    </li>
+                    <li class = "my-3">
+                        <a href = "#" class = "text-black text-decoration-none text-muted">
+                            <i class = "fas fa-chevron-right me-1"></i> Favoritos
+                    </li>
+                    <li class = "my-3">
+                        <a href = "#" class = "text-black text-decoration-none text-muted">
+                            <i class = "fas fa-chevron-right me-1"></i> Blog
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class = "col-md-6 col-lg-3">
+                <h5 class = "fw-light mb-3">Contáctanos!</h5>
+                <div class = "d-flex justify-content-start align-items-start my-2 text-muted">
+
+                </div>
+                <div class = "d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class = "me-3">
+                            <i class = "fas fa-envelope"></i>
+                        </span>
+                    <span class = "fw-light">
+                            strafepe@gmail.com
+                        </span>
+                </div>
+                <div class = "d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class = "me-3">
+                            <i class = "fas fa-phone-alt"></i>
+                        </span>
+                    <span class = "fw-light">
+                            +51999999999
+                        </span>
+                </div>
+            </div>
+
+            <div class = "col-md-6 col-lg-3">
+                <h5 class = "fw-light mb-3">Síguenos</h5>
+                <div>
+                    <ul class = "list-unstyled d-flex">
+                        <li>
+                            <a href = "#" class = "text-black text-decoration-none text-muted fs-4 me-4">
+                                <i class = "fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#" class = "text-black text-decoration-none text-muted fs-4 me-4">
+                                <i class = "fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#" class = "text-black text-decoration-none text-muted fs-4 me-4">
+                                <i class = "fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href = "#" class = "text-black text-decoration-none text-muted fs-4 me-4">
+                                <i class = "fab fa-pinterest"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+<script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>

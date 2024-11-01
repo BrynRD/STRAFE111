@@ -1,0 +1,17 @@
+Index: src/main/resources/templates/detalleproducto.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/detalleproducto.html b/src/main/resources/templates/detalleproducto.html
+--- a/src/main/resources/templates/detalleproducto.html	
++++ b/src/main/resources/templates/detalleproducto.html	(date 1730493811962)
+@@ -28,7 +28,7 @@
+             background-color: #f9f9f9; /* Color de fondo para destacar */
+         }
+         .img-principal {
+-            width: 90%; /* Mantiene la imagen principal a tamaño completo */
++            width: 100%; /* Mantiene la imagen principal a tamaño completo */
+         }
+         .img-secundaria {
+             width: 400px; /* Ajusta el tamaño de las imágenes secundarias */

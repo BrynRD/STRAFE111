@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Administración de Usuarios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel = "stylesheet" href = "/style.css">
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-4 fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/admin">Strafe Admin</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/users">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/orders">Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mt-5">
+    <h2>Administración de Usuarios</h2>
+
+    <div class="mt-4 mb-4">
+        <h4>Agregar Nuevo Usuario</h4>
+        <form th:action="@{/admin/usuarios}" th:object="${usuario}" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" th:field="*{nombre}" required>
+            </div>
+            <div class="form-group">
+                <label for="correoElectronico">Email:</label>
+                <input type="email" class="form-control" id="correoElectronico" th:field="*{correoElectronico}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+        </form>
+    </div>
+
+    <div class="mt-4">
+        <h4>Lista de Usuarios</h4>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="usuario : ${usuarios}">
+                <td th:text="${usuario.usuarioID}">1</td>
+                <td th:text="${usuario.nombre}">John Doe</td>
+                <td th:text="${usuario.correoElectronico}">john.doe@example.com</td>
+                <td>
+                    <a th:href="@{/admin/usuarios/editar/{usuarioID}(usuarioID=${usuario.usuarioID})}" class="btn btn-warning btn-sm">Editar</a>
+                    <a th:href="@{/admin/usuarios/eliminar/{usuarioID}(usuarioID=${usuario.usuarioID})}" class="btn btn-danger btn-sm"
+                       onclick="return confirm('¿Estás seguro de que quieres eliminar este usuario?');">Eliminar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

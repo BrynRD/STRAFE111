@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel = "stylesheet" href = "/style.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Editar Usuario</h2>
+
+    <div class="mt-4 mb-4">
+        <form th:action="@{/admin/usuarios/actualizar/{usuarioID}(usuarioID=${usuario.usuarioID})}" th:object="${usuario}" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" th:field="*{nombre}" required>
+            </div>
+            <div class="form-group">
+                <label for="correoElectronico">Email:</label>
+                <input type="email" class="form-control" id="correoElectronico" th:field="*{correoElectronico}" required>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" class="form-control" id="contrasena" th:field="*{contrasena}" required>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" class="form-control" id="direccion" th:field="*{direccion}" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" class="form-control" id="telefono" th:field="*{telefono}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar Usuario</button>
+        </form>
+    </div>
+    <a href="/admin/usuarios" class="btn btn-secondary">Cancelar</a>
+</div>
+</body>
+</html>

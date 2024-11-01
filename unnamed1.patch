@@ -1,0 +1,25 @@
+Index: src/main/java/com/strafe/controller/AdminController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/strafe/controller/AdminController.java b/src/main/java/com/strafe/controller/AdminController.java
+--- a/src/main/java/com/strafe/controller/AdminController.java	
++++ b/src/main/java/com/strafe/controller/AdminController.java	
+@@ -46,15 +46,7 @@
+         logger.info("Accediendo a la ruta /admin/productos/nuevo");
+ 
+         model.addAttribute("producto", new Producto());
+-
+-        var categorias = categoriaService.findAll();
+-        if (categorias != null && !categorias.isEmpty()) {
+-            logger.info("Categorías recuperadas con éxito, número de categorías: {}", categorias.size());
+-        } else {
+-            logger.warn("No se recuperaron categorías o la lista está vacía");
+-        }
+-
+-        model.addAttribute("categorias", categorias);
++        model.addAttribute("categorias", categoriaService.findAll());
+ 
+         return "nuevoproducto";
+     }
